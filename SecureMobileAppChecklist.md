@@ -35,13 +35,13 @@ Red flags: JWTs with long expiry, role checks only on client.
 
 - Android: Use Keystore + encrypted storage (not SharedPreferences)
 
-- Never store:
+** Never store:
 
-- Plaintext tokens
+1- Plaintext tokens
 
-- Passwords
+2- Passwords
 
-- Full card numbers
+3- Full card numbers
 
 - Cached files are non-sensitive or encrypted
 
