@@ -1,5 +1,5 @@
 ✅ Secure Mobile App Checklist (iOS & Android)
-0) Threat Modeling (Before Writing Code)
+##  0) Threat Modeling (Before Writing Code)
 
 - Identify assets (PII, tokens, payments, location, secrets)
 
@@ -13,7 +13,7 @@
 
 Deliverable: 1–2 page threat model per app.
 
-1) Authentication & Authorization
+## 1) Authentication & Authorization
 
 - No hardcoded credentials, API keys, or secrets in the app
 
@@ -29,7 +29,7 @@ Deliverable: 1–2 page threat model per app.
 
 Red flags: JWTs with long expiry, role checks only on client.
 
-2) Secure Storage (At Rest)
+## 2) Secure Storage (At Rest)
 
 - iOS: Use Keychain with correct accessibility class
 
@@ -49,7 +49,7 @@ Red flags: JWTs with long expiry, role checks only on client.
 
 Test: Dump app data on compromised device → no secrets readable.
 
-3) Network Security (In Transit)
+## 3) Network Security (In Transit)
 
 - TLS enforced everywhere (no HTTP fallback)
 
@@ -65,7 +65,7 @@ Test: Dump app data on compromised device → no secrets readable.
 
 Test: Intercept traffic with Burp → requests fail.
 
-4) API & Backend Trust
+## 4) API & Backend Trust
 
 - Backend treats mobile app as untrusted
 
@@ -81,7 +81,7 @@ Test: Intercept traffic with Burp → requests fail.
 
 Red flags: user_id sent from client and trusted.
 
-5) Cryptography
+## 5) Cryptography
 
 - Use platform crypto APIs only (no custom crypto)
 
@@ -95,7 +95,7 @@ Red flags: user_id sent from client and trusted.
 
 Rule: If you can’t explain why crypto is needed, remove it.
 
-6) Runtime Protections & Hardening
+## 6) Runtime Protections & Hardening
 
 - Basic root/jailbreak detection (defense-in-depth)
 
@@ -109,7 +109,7 @@ Rule: If you can’t explain why crypto is needed, remove it.
 
 Note: These slow attackers; they don’t stop them alone.
 
-7) Reverse Engineering Resistance
+## 7) Reverse Engineering Resistance
 
 - iOS symbols stripped in release
 
@@ -123,7 +123,7 @@ Note: These slow attackers; they don’t stop them alone.
 
 Test: Decompile app → no obvious secrets or logic exposure.
 
-8) Input Handling & UI Security
+## 8) Input Handling & UI Security
 
 - All inputs validated (length, format, type)
 
@@ -137,7 +137,7 @@ Test: Decompile app → no obvious secrets or logic exposure.
 
 - Screenshots disabled for sensitive screens (where appropriate)
 
-9) Logging, Analytics & Crash Reporting
+## 9) Logging, Analytics & Crash Reporting
 
 - No PII, tokens, or secrets in logs
 
@@ -149,7 +149,7 @@ Test: Decompile app → no obvious secrets or logic exposure.
 
 Test: Force crash → inspect payload sent to crash service.
 
-10) Permissions & Privacy
+## 10) Permissions & Privacy
 
 - Request minimum permissions
 
@@ -161,7 +161,7 @@ Test: Force crash → inspect payload sent to crash service.
 
 - Data retention policy implemented
 
-11) Third-Party SDKs
+## 11) Third-Party SDKs
 
 - Inventory all SDKs (purpose, data accessed)
 
@@ -175,7 +175,7 @@ Test: Force crash → inspect payload sent to crash service.
 
 Risk: SDKs are a common data-leak vector.
 
-12) Build & Release Security
+## 12) Build & Release Security
 
 - Separate dev/staging/prod environments
 
@@ -187,7 +187,7 @@ Risk: SDKs are a common data-leak vector.
 
 - Reproducible builds enabled where possible
 
-13) Security Testing (Before Every Release)
+## 13) Security Testing (Before Every Release)
 
 - Static analysis (MobSF / equivalent)
 
@@ -201,7 +201,7 @@ Risk: SDKs are a common data-leak vector.
 
 Definition of Done: Security checks pass.
 
-14) Incident Readiness
+## 14) Incident Readiness
 
 - Ability to revoke tokens remotely
 
@@ -211,7 +211,7 @@ Definition of Done: Security checks pass.
 
 - Responsible disclosure process defined
 
-🔁 How to Use This Checklist
+## 🔁 How to Use This Checklist
 
 Design phase: Sections 0–4
 
@@ -221,5 +221,3 @@ Pre-release: Sections 11–13
 
 Production: Section 14
 
-
-a security review template
